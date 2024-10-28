@@ -93,4 +93,7 @@ dependencies {
 
     // Kotlin Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+
+    //google Places API
+    implementation("com.google.android.libraries.places:places:2.5.0")
 }

@@ -30,6 +30,11 @@ import com.google.android.gms.maps.GoogleMap.MAP_TYPE_TERRAIN
 import com.google.android.gms.maps.GoogleMap.MAP_TYPE_SATELLITE*/
 import com.google.maps.android.compose.MapProperties
 import com.google.maps.android.compose.MapType
+import com.google.android.libraries.places.api.Places
+import com.google.android.libraries.places.api.model.Place
+import com.google.android.libraries.places.api.net.FindCurrentPlaceRequest
+import com.google.android.libraries.places.api.net.PlacesClient
+import kotlinx.coroutines.launch
 
 @Composable
 fun MapScreen() {
@@ -38,6 +43,9 @@ fun MapScreen() {
         position = com.google.android.gms.maps.model.CameraPosition.fromLatLngZoom(arequipaLocation, 12f)
     }
     val context = LocalContext.current
+
+    //PlacesClient
+    val placesClient = remember { Places.createClient(context) }
 
     //ubicaciones
     val locations = listOf(
